@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": false,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "typeRoots": [
+      "./src/@types"
+    ],
+    "types": ["@types/jest", "@types/node"],
+  },
+
+  "include": [
+    "src"
+  ],
+
+  "exclude": [
+    "**/*.test.ts"
+  ]
+}
