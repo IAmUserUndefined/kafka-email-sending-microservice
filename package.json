@@ -1,0 +1,8 @@
+{
+  "name": "microservice-send-email",
+  "version": "1.0.0",
+  "description": "Microsserviço de Envio de Email",
+  "main": "server/server.js",
+  "author": "João Pedro",
+  "license": "MIT"
+}
