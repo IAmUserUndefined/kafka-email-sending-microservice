@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import "dotenv/config";
 
 class Helper {
@@ -10,6 +12,9 @@ class Helper {
 		return process.env.EMAIL_PASSWORD;
 	}
 
+	static getKafkaPortEnvironmentVariable(){
+		return process.env.KAFKA_PORT;
+	}
 }
 
 export default Helper;
