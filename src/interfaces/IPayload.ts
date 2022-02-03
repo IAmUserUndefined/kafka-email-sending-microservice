@@ -4,7 +4,6 @@ interface IPayload {
     email: string, 
     token: string, 
     url: string, 
-    response: string 
 }
 
 export default IPayload;

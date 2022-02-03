@@ -15,11 +15,11 @@ const bootstrap = async () => {
 
 			const payload: IPayload = JSON.parse(messageValue);
 
-			const { subject, emailBody, email, token, url, response } = payload;
+			const { subject, emailBody, email, token, url } = payload;
 
-			const result = await sendEmail.execute({ subject, emailBody, email, token, url }) || response;
+			const response = await sendEmail.execute({ subject, emailBody, email, token, url });
 
-			kafka.producer("response-send-email", result);
+			kafka.producer("response-send-email", response);
 		},
 	});
 }; 

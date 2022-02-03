@@ -9,7 +9,7 @@ export default class SendEmail {
 		this.mail = new Mail();
 	}
 
-	async execute( { subject, emailBody, email, token, url }: ISendEmail ): Promise<string | void> {
+	async execute( { subject, emailBody, email, token, url }: ISendEmail ): Promise<string> {
 
 		try {
 			await this.mail.sendMail(email, subject, emailBody, {
@@ -17,6 +17,8 @@ export default class SendEmail {
 				email: email,
 				token: token
 			});
+
+			return "Email enviado com sucesso";
 		}
 
 		catch(e) {
