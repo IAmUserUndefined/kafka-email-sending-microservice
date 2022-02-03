@@ -1,7 +1,7 @@
-import Mail from "../provider/Mail/Mail";
+import Mail from "../../providers/Mail/Mail";
 import ISendEmail from "./ISendMail";
 
-export default class SendEmailRules {
+export default class SendEmail {
 
 	private mail: Mail;
 
