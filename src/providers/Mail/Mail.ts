@@ -30,15 +30,24 @@ class Mail implements IMail {
 		}));
 	}
 
-	async sendMail(to: string, subject: string, template: string, context: any): Promise<void> {
-		const email = {
-			from: "Minhas Despesas",
-			to: to,
-			subject: subject,
-			template: template,
-			context: context
-		};
-		await this.mail.sendMail(email);
+	async sendMail(to: string, subject: string, template: string, context: any): Promise<string> {
+		try {
+			const email = {
+				from: "Microsserviço de Envio de Email",
+				to: to,
+				subject: subject,
+				template: template,
+				context: context
+			};
+			await this.mail.sendMail(email);
+
+			return "Email enviado com sucesso";
+		}
+
+		catch(e) {
+			console.log(e);
+			return "Houve um problema no envio de email";
+		}
 	}
 }
 

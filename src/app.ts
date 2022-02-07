@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import Kafka from "./providers/Kafka/Kafka";
-import SendEmail from "./classes/SendMail/SendMail";
+import Mail from "./providers/Mail/Mail";
 import IPayload from "./interfaces/IPayload";
 
 const kafka = new Kafka();
-const sendEmail = new SendEmail();
+const mail = new Mail();
 
 const bootstrap = async () => {
 	await kafka.consumer("request-send-email", {
@@ -17,7 +17,11 @@ const bootstrap = async () => {
 
 			const { subject, emailBody, email, token, url } = payload;
 
-			const response = await sendEmail.execute({ subject, emailBody, email, token, url });
+			const response = await mail.sendMail(email, subject, emailBody, {
+				appUrl: url,
+				email: email,
+				token: token
+			});
 
 			kafka.producer("response-send-email", response);
 		},
