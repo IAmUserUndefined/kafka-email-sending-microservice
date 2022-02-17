@@ -28,4 +28,4 @@ const bootstrap = async () => {
 	});
 }; 
 
-bootstrap().catch(console.error);
+bootstrap().catch((e) => console.log(e));
