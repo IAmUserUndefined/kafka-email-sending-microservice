@@ -27,7 +27,7 @@ Após clonar a aplicação, entre em sua pasta e rode o seguinte comando:
 
 Após a instalação, substitua no arquivo de variáveis de ambiente de teste o email e senha que a aplicação pede, você deve permitir o acesso do nodemailer a seu email, após isso rode o seguinte comando:
 ```sh
-  yarn test --watchAll
+  yarn test
 ```
 Após executar os testes, faça a composição com os containers que possibilitam executar o kafka em desenvolvimento, para isso rode o seguinte comando:
 ```sh
